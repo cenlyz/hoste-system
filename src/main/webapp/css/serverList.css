@@ -1,0 +1,28 @@
+.ap-conT {
+    color: #01AAED;
+    font-size: 14px;
+    font-weight: bold;
+}
+.ap-conT:hover {
+	text-decoration: underline;
+	color: #1E9FFF
+}
+.pr-p1 {
+    color: #666;
+    line-height: 25px;
+}
+
+.ml15 {
+    margin-left: 15px !important;
+}
+
+.layui-colla-title span.serverDesc {
+	margin-left: 60px;
+	font-size: 12px;
+	color: #212121;
+	font-weight: 500;
+}
+#serverList > .layui-colla-item .layui-colla-title {
+	font-weight: 700;
+	color: #009688;
+}

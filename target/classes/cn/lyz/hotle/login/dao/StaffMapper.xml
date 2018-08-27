@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="cn.lyz.hotle.login.dao.StaffDao">
+
+	<update id="changePwd" >
+	update  h_staff set
+	password=#{password} 
+	where id=#{id} 
+	</update>
+	<select id="findByUsername" resultType="Staff">
+		select * from h_staff where staff_phone=#{username} 
+	</select>
+	<!-- 定义一个查询语句获取登陆信息 -->
+	<select id="findStaffByUserName" resultType="Staff"  >
+		select * from h_staff where username=#{username} or staff_phone=#{username}
+	</select>
+	<!-- 定义一个查询语句获取登陆信息 -->
+	<select id="findStaffs" resultType="Staff"  >
+		select * from h_staff ORDER BY id DESC
+	</select>
+	<select id="findUserName" resultType="Staff"  >
+		select * from h_staff WHERE username like concat('%',#{username},'%') ORDER BY id DESC
+	</select>
+	<insert id="insertStaff" parameterType="Staff">
+		insert into
+			h_staff
+			(name,staff_site,username,password,
+			staff_sex,staff_health_id,staff_state,staff_phone)
+		values
+			(#{name},#{staff_site},#{username},#{password},
+			#{staff_sex},#{staff_health_id},#{staff_state},#{staff_phone})
+	</insert>
+	<update id="updateStaffById" parameterType="Staff">
+		update h_staff
+			set
+			room_id=#{room_id},room_type=#{room_type},
+			room_price=#{room_price},room_site=#{room_site},
+			room_phone=#{room_phone},room_state=#{room_state},
+			room_discount=#{room_discount},room_describe=#{room_describe})
+			where id=#{id}
+	</update>
+	<delete id="staffDelId">
+		delete from h_staff where id=#{id}
+	</delete>
+	<delete id="staffDelIds">
+		delete from h_staff where id in 
+		<foreach collection="ids" open="("  item="item" separator="," close=")" >
+		#{item}
+		</foreach>
+	</delete>
+	
+	<update id="editStaff" parameterType="Staff">
+		update h_staff set 
+		name=#{name},staff_site=#{staff_site},
+		username=#{username},staff_sex=#{staff_sex},
+		staff_sex=#{staff_sex},staff_health_id=#{staff_health_id},
+		staff_state=#{staff_state},staff_phone=#{staff_phone}
+		where id=#{id}
+			
+	</update>
+	
+	
+</mapper>

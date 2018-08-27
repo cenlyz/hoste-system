@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="cn.lyz.hotle.qt.dao.BookDao">
+	<!-- 定义一个查询语句获取登陆信息 -->
+	<select id="findBookRoomType" resultType="Room"  >
+		select distinct room_type,COUNT(room_state) room_count from h_room where room_state=0 GROUP BY room_type
+	</select>
+	<insert id="insertBook" parameterType="BookRoom">
+		insert into
+			h_book
+			(check_name,check_tel,check_in,check_out,
+			book_room,book_type,book_count,book_mony)
+		values
+			(#{check_name},#{check_tel},#{check_in},#{check_out},
+			#{book_room},#{book_type},#{book_count},#{book_mony})
+	</insert>
+	<!-- 查询预定信息 -->
+
+	<select id="findMaxId" resultType="int">
+		select  MAX(id) id  from h_book 
+	</select>
+	<!-- 查询 -->
+	<select id="findRoomCount" resultType="Room">
+		select  room_id  from h_room where room_state=0 and room_type=#{type} 
+	</select>
+	<!-- 更新预定状态 -->
+	<update id="updateRoomID">
+		update h_room set room_state=3,book_id=#{bookId} where room_id=#{roomId}
+	</update>
+	
+</mapper>

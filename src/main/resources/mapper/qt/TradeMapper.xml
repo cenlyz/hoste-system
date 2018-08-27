@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="cn.lyz.hotle.back.dao.TradeDao">
+	
+	<select id="findTradeObjects" resultType="Trade">
+		select * from h_trade ORDER BY id DESC 
+	</select>
+	
+	<select id="findTradeByIdObjects" resultType="Trade">
+		select * from h_trade where goods_id like concat('%',#{goods_id},'%') ORDER BY id DESC 
+	</select>
+	<update id="editGoods" parameterType="Trade">
+		update h_trade set 
+		goods_name=#{goods_name},
+		goods_kc=#{goods_kc},
+		goods_yu=#{goods_yu},
+		goods_class=#{goods_class} 
+		where goods_id=#{goods_id}
+		
+	</update>
+	<insert id="addGoods" parameterType="Trade">
+		insert into
+			h_trade
+			(goods_name,goods_kc,goods_yu,goods_class,
+			goods_id)
+		values
+			(#{goods_name},#{goods_kc},#{goods_yu},#{goods_class},
+			#{goods_id})
+	</insert>
+	<update id="delGoodsById" >
+		delete from h_trade where id=#{id}
+	</update>
+	
+	
+	
+</mapper>

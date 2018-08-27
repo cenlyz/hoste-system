@@ -1,0 +1,51 @@
+.search{
+	margin-left: 50px;
+}
+.errcode-message{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.errcode-message p{
+	font-size:14px;
+	font-family: 'Microsoft YaHei';
+	color: #666;
+	margin: 5px auto;
+	
+}
+.wr-ul li a {
+    color: #2272c8;
+}
+ul {
+    list-style: none;
+}
+.wr-ul li{
+	border-top: 1px dashed #e2e3e4;
+	padding: 20px ;
+	margin-left: 200px;
+}
+.errcode-top p{
+	margin-left: 107px;
+	font-size: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color: #333;
+}
+.errcode-data{
+	background-color:#fff; 
+	font-family: 'Microsoft YaHei';
+    color: #666;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

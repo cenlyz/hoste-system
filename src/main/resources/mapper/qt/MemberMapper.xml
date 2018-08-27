@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="cn.lyz.hotle.qt.dao.MemberDao">
+	
+	<sql id="whereQuery">
+		<where>
+			<if test="m_id!=null and m_id!=''">
+				m_id like CONCAT('%',#{m_id},'%')
+			</if>
+			<if test="check_tel!=null and check_tel!=''">
+				and check_tel like CONCAT('%',#{check_tel},'%')
+			</if>
+		</where>
+	</sql>
+	<sql id="whereByIdAddTel">
+		<where>
+			<if test="id!=null and id!=''">
+				m_id=#{id} or check_tel=#{id}
+			</if>
+		</where>
+	</sql>
+	<sql id="wherefindList">
+		<where>
+			<if test="str!=null and str!=''">
+				m_id like concat('%',#{str},'%') or 
+				check_tel like concat('%',#{str},'%') or 
+				m_state like concat('%',#{str},'%') or 
+				m_type like concat('%',#{str},'%') or
+				check_name like concat('%',#{str},'%')
+			</if>
+		</where>
+	</sql>
+	<select id="findMemberObjects" resultType="Member">
+		select * from h_member <include refid="wherefindList"/>
+	</select>
+	<select id="findMemberState" resultType="Member">
+		select m_state from h_member where id=#{id}
+	</select>
+	<select id="findMemberCount" resultType="int">
+		select count(1) count from h_member where m_id=#{m_id}
+	</select>
+		
+	<update id="updateMemberState">
+		update h_member set m_state=#{m_state} where id=#{id}
+	</update>
+	<!-- 添加会员 -->
+	<insert id="saveMemberObjct" parameterType="Member">
+		insert into h_member 
+		(m_id,m_state,m_type,m_price,check_name,check_sex,
+		check_tel,id_number,m_integral,m_discount) 
+		values(#{m_id},#{m_state},#{m_type},#{m_price},#{check_name},#{check_sex},
+		#{check_tel},#{id_number},#{m_integral},#{m_discount})
+	</insert>
+	
+	<select id="getRowCount" resultType="int">
+		select count(*) from h_member <include refid="whereQuery"/>
+	</select>
+	
+	<select id="findPageObjects" resultType="Member">
+		select * from h_member
+		<include refid="whereQuery"/>
+		  order by id desc limit #{startIndex},#{pageSize}
+	</select>
+	<select id="getMemberSearch" resultType="Vip">
+		SELECT COUNT(m_type) count ,m_type type FROM h_member GROUP BY m_type
+	</select>
+	<!-- 查询会员是否存在 -->
+	<select id="getMemberByIdAddTel" resultType="Member">
+		SELECT  * FROM h_member <include refid="whereByIdAddTel"/>
+	</select>
+	<!-- 查询该会员折扣 -->
+	<select id="getDiscountByType" resultType="Discount">
+		SELECT  * FROM h_discount where type=#{type}
+	</select>
+	<!-- 更新会员金额 -->
+	<update id="updatePriceById">
+		update h_member set m_price=#{price},m_integral=#{m_integral} <include refid="whereByIdAddTel"/>
+	</update>
+	<!-- 更新会员折扣 -->
+	<update id="updateDiscount">
+		update h_discount set discount=#{discount} where type=#{type}
+	</update>
+</mapper>

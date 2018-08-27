@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>找回密码</title>
+</head>
+<link rel="stylesheet" href="../../css/find.css">
+<script  src="../../js/jquery-1.11.1.js"></script>
+<script type="text/javascript">
+	function user1(){
+		var str=$("#r_email").val();//获取输入的值
+		//判断输入的值是否符合条件
+			var reg=/^[0-9a-zA-Z]{6}$/;
+			if(reg.test(str)&&str.length==6){
+				$("#r_email").prev().prev().find("span").attr("class","suc");
+				return true;
+			}
+			reg=/^\d{11}$/;
+			if(reg.test(str)&&str.length==11){
+				$("#r_email").prev().prev().find("span").attr("class","suc");
+				return true;
+		}
+		$("#r_email").prev().prev().eq(0).attr("style","display: block;");
+		$("#r_email").prev().prev().find("i").html("输入的员工号/号码有误");
+		$("#r_email").prev().prev().find("span").attr("class","err");
+	}
+	function id6(){
+		var str=$("#mail_code").val();//获取输入的值
+		var reg=/^\d{6}$/;
+		var d=parseInt(str.substring(0,2));//截取前两位判断不能大于31
+		if(reg.test(str)&&d<32){
+			$("#mail_code").prev().prev().find("span").addClass("suc");
+			return true;
+		}
+		reg=/^\d{5}[0-9X]$/;
+		if(reg.test(str)&&d<32){
+			$("#mail_code").prev().prev().find("span").addClass("suc");
+			return true;
+		}
+		$("#mail_code").prev().prev().find("i").html("输入证件号有误");
+		$("#mail_code").prev().prev().find("span").addClass("error1");
+	}
+	function pw1(){
+		var str=$("#new_pwd").val();//获取输入的值
+		var pw_reg=/^\w{8,16}$/;
+		if(pw_reg.test(str)){
+			$("#new_pwd").prev().prev().find("span").addClass("suc");
+			return true;
+		}
+		$("#new_pwd").prev().prev().find("i").html("输入证件号有误");
+	    $("#new_pwd").prev().prev().find("span").addClass("error1");
+	}
+	function pw2(){
+		var rstr=$("#rnew_pwd").val();//获取输入的值
+		var str=$("#new_pwd").val();//获取输入的值
+		if(rstr==str){
+			$("#rnew_pwd").prev().prev().find("span").addClass("suc");
+			return true;
+		}
+		$("#rnew_pwd").prev().prev().find("i").html("输入两次密码不一致");
+	    $("#rnew_pwd").prev().prev().find("span").addClass("error1");
+	}
+</script>
+<body>
+	<div class="concent">
+		<h1>找回密码</h1>
+		<ul class="sendpwd">
+			<li>
+				<p class="error" >
+					<span class="suc"></span>
+					<i></i>
+				</p>
+				<p>用户账号</p>
+				<input id="r_email" type="text"
+				placeholder="请输入员工号/手机号" class="mailbg" onblur="user1();">
+			<!-- <button id="sed_code_tomail" class="sendyzm">发送验证码</button> -->
+			</li>
+			<li>
+				<p class="error" >
+					<span class="suc"></span>
+					<i></i>
+				</p>
+				<p>证件号</p> 
+				<input id="mail_code" type="text"
+				placeholder="请输入身份证号（后6位）" class="ryzmbg" onblur="id6();"/>
+
+			</li>
+			<li>
+				<p class="error" >
+					<span class="suc"></span><i></i>
+				</p>
+				<p>设置密码</p> 
+				<input id="new_pwd" type="password" placeholder="请输入密码"
+				class="pwdbg" onblur="pw1();">
+			</li>
+			<li>
+				<p class="error" >
+					<span class="suc"></span><i></i>
+				</p>
+				<p>确认密码</p> <input id="rnew_pwd" type="password"
+				placeholder="请再次输入密码" class="pwdbg" onblur="pw2();">
+			</li>
+			<li><a id="findpassword" href="#">确认重置密码</a></li>
+		</ul>
+
+		<ul class="returnsucc" style="display: none;">
+			<li><p class="repwds">密码重置成功 !</p></li>
+			<li><a class="relogin">返回登录页</a></li>
+		</ul>
+	</div>
+</body>
+</html>

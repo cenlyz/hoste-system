@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="cn.lyz.hotle.login.dao.AdminDao">
+	<!-- 定义一个查询语句获取登陆信息 -->
+	<select id="findAdminByUserName" resultType="Admin"  >
+		select * from h_admin where username=#{username}
+	</select>
+	<update id="updateAdminUser"  parameterType="Admin" >
+		update  h_admin set
+		name=#{name},
+		sex=#{sex},
+		phone=#{phone},
+		year=#{year},
+		site=#{site},
+		email=#{email},
+		appraiser=#{appraiser} 
+		where username=#{username}
+	</update>
+	<update id="changePwd" >
+	update  h_admin set
+	password=#{password} 
+	where username=#{username}
+	</update>
+	
+	<select id="findByUsername" parameterType="string" resultType="Admin">
+		select * from h_admin where username=#{id}
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</mapper>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>交班处理</title>
+<meta id="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta id="viewport"content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta id="apple-mobile-web-app-status-bar-style" content="black">
+<meta id="apple-mobile-web-app-capable" content="yes">
+<meta id="format-detection" content="telephone=no">
+<link rel="stylesheet" href="css/qt_handover.css"	media="all" />
+</head>
+
+<body>
+	<hr />交班人信息
+		<div class="layui-form-item" style="margin-top: 10px;">
+			<div class="layui-inline">
+				<label class="layui-form-label" style="width: 110px;">姓名</label>
+				 <div class="layui-input-block">
+					<input class="layui-input" type="tel" id="name" >
+				</div>
+			</div>
+			<div class="layui-inline">
+				<label class="layui-form-label" style="width: 110px;">电话</label>
+				 <div class="layui-input-block">
+					<input class="layui-input" type="text" id="phone" >
+				</div>
+			</div>
+		</div>
+		<div class="layui-form-item" style="margin-top: 10px;">
+			<div class="layui-inline">
+				<label class="layui-form-label" style="width: 110px;">工号</label>
+				 <div class="layui-input-block">
+					<input class="layui-input" type="tel" id="staff_id" >
+				</div>
+			</div>
+		</div>
+		<hr />金额
+		<div class="layui-form-item" style="margin-top: 10px;">
+			<div class="layui-inline">
+				<label class="layui-form-label" style="width: 110px;">当前金额</label>
+				 <div class="layui-input-block">
+					<input class="layui-input" type="tel" id="dmoney" >
+				</div>
+			</div>
+			<div class="layui-inline">
+				<label class="layui-form-label" style="width: 110px;">备用金</label>
+				 <div class="layui-input-block">
+					<input class="layui-input" type="text" id="bmoney" >
+				</div>
+			</div>
+		</div>
+		<hr />接班人信息
+		<div class="layui-form-item" style="margin-top: 10px;">
+			<div class="layui-inline">
+				<label class="layui-form-label" style="width: 110px;">姓名</label>
+				 <div class="layui-input-block">
+					<input class="layui-input" type="tel" id="name2" >
+				</div>
+			</div>
+			<div class="layui-inline">
+				<label class="layui-form-label" style="width: 110px;">电话</label>
+				 <div class="layui-input-block">
+					<input class="layui-input" type="text" id="phone2" >
+				</div>
+			</div>
+		</div>
+		<div class="layui-form-item" style="margin-top: 10px;">
+			<div class="layui-inline">
+				<label class="layui-form-label" style="width: 110px;">工号</label>
+				 <div class="layui-input-block">
+					<input class="layui-input" type="tel" id="staff_id2" >
+				</div>
+			</div>
+		</div>
+		
+		<div class="layui-form-item">
+			<div class="block">
+				<button  class="layui-btn" style="margin-top: 10px;margin-left: 100px;" onclick="handover()">立即提交</button>
+		    </div>
+		</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="page/qt/qt_handover.js"></script>
+</html>

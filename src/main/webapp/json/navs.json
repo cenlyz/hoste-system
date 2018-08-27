@@ -1,0 +1,40 @@
+[{
+	"title" : "后台首页",
+	"icon" : "icon-computer",
+	"href" : "page/main.html",
+	"spread" : false
+},{
+	"title" : "客房管理",
+	"icon" : "icon-text",
+	"href" : "page/room/roomList.html",
+	"spread" : false
+},{
+	"title" : "员工管理",
+	"icon" : "&#xe64c;",
+	"href" : "page/links/linksList.html",
+	"spread" : false
+},{
+	"title" : "库存管理",
+	"icon" : "&#xe61c;",
+	"href" : "page/inventory/inventoryList.html",
+	"spread" : false
+},{
+	"title" : "财务管理",
+	"icon" : "&#xe630;",
+	"href" : "",
+	"spread" : false,
+	"children" : [
+		{
+			"title" : "财务列表",
+			"icon" : "&#xe61c;",
+			"href" : "page/finance/financeList.html",
+			"spread" : false
+		},
+		{
+			"title" : "财务图形",
+			"icon" : "&#xe609;",
+			"href" : "page/finance/financeTu.html",
+			"spread" : false
+		}
+	]
+}]

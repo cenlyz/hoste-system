@@ -1,0 +1,53 @@
+.layui-table-cell{
+		height: 38px;
+		line-height: 50px;
+		padding: 0px 0px;
+		text-align: center;
+		overflow:visible !important;
+	}
+.layui-input-name{
+	border: 0px solid #E6E6E6;
+}
+.layui-table td {
+	padding: 0px 0px !important;
+}
+table .layui-input{
+	border: 0px solid #e6e6e6 !important;	
+}
+.msgContent{
+	float:left;	
+	width:120px;
+	height:auto;
+	position:absolute;
+	left:0px;
+	top:40px;
+	background:#1AA094;
+	padding:8px 10px;
+	color:#fff;
+	border-radius:3px;
+	z-index:100;
+	
+}
+.msgTips .tip{
+	display:none;
+}
+.msgTips .iconfont{
+	position:relative;	
+	float:left;
+	font-size:20px;
+	margin-top:10px;
+	color:#1AA094;
+}
+.msgTips .triangle{
+	float:left;	
+	position:absolute;
+	left:10px;
+	top:32px;
+	border-left:8px solid transparent;	
+	border-right:8px solid transparent;	
+	border-bottom:8px solid #1AA094;
+	z-index:100;	
+}
+.msgTips:hover .tip{
+	display:block;
+}

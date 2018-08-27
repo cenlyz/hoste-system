@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="cn.lyz.hotle.qt.dao.KefangDao">
+	<sql id="whereQuery">
+		<where>
+			<if test="room_id!=null and room_id!=''">
+				room_id=#{room_id} and check_out_time is null
+			</if>
+			
+		</where>
+	</sql>
+	<sql id="whereState">
+		<where>
+			<if test="roomid!=null and roomid!=''">
+				room_id=#{roomid} 
+			</if>
+			<if test="id!=null and id!=''">
+				and id=#{id}
+			</if>
+			
+		</where>
+	</sql>
+
+	<!-- 定义一个查询语句获取登陆信息 -->
+	<select id="findRoomObjects" resultType="Room" >
+		select * from h_room where room_site=#{room_site} 
+	</select>
+	<select id="findRooms" resultType="Room" >
+		select * from h_room 
+	</select>
+	
+	<select id="findRoomSite" resultType="Room" >
+		select room_site from h_room GROUP BY room_site
+	</select>
+	<select id="findRoomById" resultType="Room" >
+		select * from h_room where id=#{id}
+	</select>
+	<select id="findRoomsById" resultType="Room" >
+		select * from h_room where room_id like concat('%',#{room_id},'%')
+	</select>
+	<select id="findRoomByRoomId" resultType="BookRoom" >
+		SELECT * from h_book where id=( select  book_id id  from h_room WHERE room_id=#{room_id})
+	</select>
+	<insert id="insertCheck" parameterType="Check">
+		insert into
+			h_check
+			(check_name,check_type,check_source,check_sex,
+			certificate,id_number,room_type,checkru_type,
+			check_days,room_id,room_price,check_price,check_in_time)
+		values
+			(#{check_name},#{check_type},#{check_source},#{check_sex},
+			#{certificate},#{id_number},#{room_type},#{checkru_type},
+			#{check_days},#{room_id},#{room_price},#{check_price},#{check_in_time})
+	</insert>
+	
+	<insert id="insertRoom" parameterType="Room">
+		insert into
+			h_room
+			(room_id,room_type,room_price,room_site,room_phone,
+			room_state,room_discount,room_describe)
+		values
+			(#{room_id},#{room_type},#{room_price},#{room_site},
+			#{room_phone},#{room_state},#{room_discount},#{room_describe})
+	</insert>
+<!-- 	<update id="updateRoomById" parameterType="Room"> -->
+<!-- 		update h_room -->
+<!-- 			set -->
+<!-- 			room_id=#{room_id},room_type=#{room_type}, -->
+<!-- 			room_price=#{room_price},room_site=#{room_site}, -->
+<!-- 			room_phone=#{room_phone},room_state=#{room_state}, -->
+<!-- 			room_discount=#{room_discount},room_describe=#{room_describe}) -->
+<!-- 			where id=#{id} -->
+<!-- 	</update> -->
+
+		<update id="updateRoomById" parameterType="Room">
+		update h_room
+			set
+			room_type=#{room_type},
+			room_price=#{room_price},
+			room_site=#{room_site},
+			room_phone=#{room_phone},
+			room_discount=#{room_discount},
+			room_describe=#{room_describe} 
+			where room_id=#{room_id}
+		</update>
+	
+	
+	<update id="updateRoom" >
+		update h_room set room_state=1 where room_id=#{room_id} 
+	</update>
+<!-- 查询客人信息 -->
+	<select id="findcheckByIdAndRoom" resultType="Check" >
+		select * from h_check where room_id=#{room_id} and check_out_time is null
+	</select>
+	<!-- 入住 -->
+	<update id="updateRoomState" >
+		update h_room set room_state=0 where id=#{id}
+	</update>
+	<!-- 退房 -->
+	<update id="updateRoomIdState" >
+		update h_room set room_state=2 where room_id=#{room_id}
+	</update>
+	
+	<update id="updateChecktate" >
+		update h_check set check_out_time=#{time} <include refid="whereQuery"/>
+	</update>
+	<!-- 查询入住时间 和入住的价格-->
+	<select id="findChecktimeAndMoney" resultType="Check" >
+		select check_in_time,room_price from h_check <include refid="whereQuery"/>
+	</select>
+	
+	<select id="findHotel" resultType="Hotel" >
+		select * from h_hotel 
+	</select>
+	<update id="roomDelById" >
+		delete  from h_room where id=#{id}
+	</update>
+	
+	
+	
+	
+	
+	
+	
+</mapper>

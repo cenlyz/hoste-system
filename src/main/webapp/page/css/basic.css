@@ -1,0 +1,151 @@
+* {
+box-sizing: border-box;
+}
+.x-set1{
+	margin:10px auto;
+	width: 900px;
+	height: 400px;
+}
+ul {
+list-style: none;
+margin-top: 0px;
+}
+ .x-jbxx {
+color: #333;
+font-size: 16px;
+}
+.l-170314-01 li {
+margin: 10px 0;
+position: relative;
+}
+
+.x-set1 .x-tx {
+margin: 25px 0;
+}
+.x-set1 .x-touxbox em {
+	display: none;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .3);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	text-align: center;
+	color: #fff;
+	font-style: normal;
+}
+.l-170314-01 li {
+	margin: 10px 0;
+	position: relative;
+}
+	input.l-170314-text-01[readonly] {
+	background: #f8f8f8;
+}
+.l-170314-text-01 {
+	width: 330px;
+	height: 32px;
+	border: 1px solid #dfdfdf;
+	padding-left: 8px;
+	color: #999;
+}
+input {
+	font-family: "Microsoft Yahei";
+	padding: 0;
+	margin: 0;
+	color: #666;
+	margin: 6px ;
+}
+.x-choose-down .x-ipt-group {
+	width: 330px;
+	height: 32px;
+	border: 1px solid #dfdfdf;
+	padding-left: 8px;
+	color: #999;
+	background: #fff;
+	display: inline-block;
+	position: relative;
+	margin-left: 6px;
+}
+.x-ipt-group .custom_sel_list {
+	top: 30px;
+	background: #fff;
+	width: 330px;
+	left: -1px;
+	position: absolute;
+	border: 1px solid #dedede;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+	z-index: 1;
+}
+element.style {
+	display: none;
+}
+.x-ipt-group .custom_sel_text {
+	cursor: pointer;
+	height: 32px;
+	line-height: 32px;
+}
+.x-ipt-group span {
+	display: inline-block;
+	height: 100%;
+	width: 28px;
+	border-left: 1px solid #dedede;
+	background: url(../imgs/x_i_d.png) no-repeat center #f8f8f8;
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+}
+.l-170314-01 li.x-choose-down span {
+	float: left;
+	line-height: 32px;
+}
+.x-set1 li>span {
+	display: inline-block;
+	width: 100px;
+}
+.x-set1 .l-170314-03 .x-jbxx span{
+	display: inline-block;
+	width: 4px;
+	height: 16px;
+	background: #288baa;
+	margin-right: 10px;
+	position: relative;
+	top: 2px;
+}
+
+.x-ipt-group{
+	padding-left: 8px;	
+}
+.x-set1>ul>li:last-child {
+	margin-top: 30px;
+	margin-bottom: 40px;
+	padding-left: 192px;
+	width: 410px;
+	text-align: right;
+}
+.x-queren a {
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 13px;
+	color: #fff;
+	background-color: #31b0d5;
+	border-radius: 3px;
+	cursor: pointer;
+}
+.x-set1 .x-touxbox {
+	border: 1px solid #2f7181;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	overflow: hidden;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+}
+.x-set1>.l-170314-03>.x-queren{
+	margin-top: 10px;
+}

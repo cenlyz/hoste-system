@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="cn.lyz.hotle.back.dao.FinanceDao">
+	<!-- 定义一个查询语句获取登陆信息 -->
+	<select id="findFinanceList" resultType="Finance"  >
+		SELECT YEAR,MONTH,DAY,type,SUM(money) money FROM h_finance 
+		GROUP BY `year`,`month`,`day`,type WITH ROLLUP 
+		<if test="year!=null and year!=''">
+				HAVING `year`=#{year}
+		</if>
+		<if test="month!=null and month!=''">
+			and `month`=#{month}
+		</if>
+		<if test="day!=null and day!=''">
+			and `day`=#{day}
+		</if>
+	</select>
+	
+	<select id="findFinanceTime" resultType="Finance" >
+		SELECT time,type,SUM(money) money FROM h_finance  
+		GROUP BY time,type WITH ROLLUP 
+	</select>
+	
+	<select id="findFinanceMonth" resultType="Finance" >
+		SELECT sum(money) money,month FROM h_finance  GROUP BY `year`,`month` 
+		HAVING `year`=#{year}  ORDER BY `month`
+	</select>
+	
+	<select id="findFinanceYearMonth" resultType="Finance" >
+		SELECT sum(money) money,`day` FROM h_finance  GROUP BY `year`,`month`,`day` 
+		HAVING `year`=#{year} and `month`=#{month}  ORDER BY `day`;
+	</select>
+	
+	<insert id="updateFinace" parameterType="Finance">
+		INSERT INTO h_finance (type,money,time,YEAR,MONTH,DAY) 
+		VALUES (#{type},#{money},#{time},#{year},#{month},#{day})
+	</insert>
+	
+</mapper>

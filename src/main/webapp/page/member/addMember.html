@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>添加会员--开发管理平台</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="../../css/font_wstt9.css" media="all" />
+	<link rel="stylesheet" href="../../css/user.css" media="all" />
+</head>
+<body class="childrenBody" style="margin-right: 50px">
+	<form class="layui-form">
+	<div class="layui-form-item">
+	    <label class="layui-form-label">会员类型</label>
+	    <div class="layui-input-block vip">
+	      <select name="browseLook" name="type" class="newsLook type" lay-filter="browseLook">
+	        <option value="普通vip">普通vip</option>
+	        <option value="黄金vip">黄金vip</option>
+	        <option value="砖石vip">砖石vip</option>
+	      </select>
+	    </div>
+  </div>
+   <div class="layui-form-item">
+    <div class="layui-inline">
+      <label class="layui-form-label">设置折扣</label>
+      <div class="layui-input-inline">
+        <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入0~1的折扣" class="layui-input discount">
+      </div>
+    </div>
+    </div>
+</form>
+	<script type="text/javascript" src="../../layui/layui.js"></script>
+	<script type="text/javascript" src="addMember.js"></script>
+</body>
+</html>

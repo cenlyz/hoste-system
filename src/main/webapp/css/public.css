@@ -1,0 +1,116 @@
+.layui-form .layui-row{
+	line-height: 33px;
+	padding-left: 10px;
+	padding-right: 15px;
+}
+.layui-form .layui-elem-field legend{
+	font-size:18px;
+}
+.layui-form .layui-field-title{
+	margin: 20px 0 10px;
+}
+.layui-form .first-field-title{
+	margin: 10px 0 10px;
+}
+.layui-form .layui-row .buttonPanel{
+	line-height: 120px;
+}
+.layui-form .layui-row table{
+	width: 100%;
+}
+
+.layui-form .layui-row .label{
+	padding: 10px;
+	margin-right: 10px;
+	width: 100px;
+	text-align: right;
+}
+
+.layui-form .layui-row td.tips{
+	width: 30px;
+}
+
+.msgTips{
+	width: 20px;
+	margin-left: 10px;
+}
+	
+.msgTips .tip{
+	display:none;
+}
+.msgTips .iconfont{
+	font-size:20px;
+	color:#1AA094;
+}
+.msgTips .triangle{
+	float:left;	
+	position:absolute;
+	left:1px;
+	top:38px;
+	border-left:8px solid transparent;	
+	border-right:8px solid transparent;	
+	border-bottom:8px solid #1AA094;
+	z-index:100;	
+}
+.msgTips:hover .tip{
+	display:block;
+}
+
+.msgContent{
+	min-width: 120px;
+	height:auto;
+	line-height:20px;
+	position:absolute;
+	left:0px;
+	top:45px;
+	background:#1AA094;
+	padding:8px 10px;
+	color:#fff;
+	border-radius:3px;
+	z-index:100;
+}
+
+.table_list .layui-table-cell{
+		height: 38px;
+		line-height: 50px;
+		padding: 0px 0px;
+		text-align: center;
+		overflow:visible !important;
+}
+.table_list .layui-input-name{
+	border: 0px solid #E6E6E6;
+}
+.table_list .layui-table td {
+	padding: 0px 0px !important;
+}
+.table_list table .layui-input{
+	border: 0px solid #e6e6e6 !important;	
+}
+
+.grey{
+	background-color:#f2f2f2;
+}
+.track{
+ position:relative;
+		}
+.actionNode{
+	 width: 100px;
+	 height: 40px;
+	 line-height: 1.5em;
+	 text-align: center;
+	 z-index: 20;
+	 position: absolute;
+	 background-color: white;
+	 color: black;
+	 font-family: helvetica;
+	 font-size: 0.9em;
+}
+.expendNode {
+	 display: block;
+	 width: 30px;
+	 height: 20px;
+	 position: absolute;
+	 float: right;
+	 right: -10px;
+	 top: 0px;
+}

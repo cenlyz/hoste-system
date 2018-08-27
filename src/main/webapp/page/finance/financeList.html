@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>文章列表--酒店后台管理模板</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="//at.alicdn.com/t/font_tnyc012u2rlwstt9.css" media="all" />
+</head>
+<body >
+<form class="layui-form" name="form1">	
+	<div class="layui-inline">
+    <label class="layui-form-label">选择年月日</label>
+	<div class="layui-input-inline">
+		<select name="YYYY" onchange="YYYYMM(this.value)" id="yyyy">  
+			<option value="">年</option> 
+		</select>  
+	</div>
+	<div class="layui-input-inline">
+		<select name="MM" onchange="MMDD(this.value)" id="mm">  
+			<option value="">月</option> 
+    	</select>
+  	</div>
+ 	<div class="layui-input-inline">
+		<select name="DD" id="dd">  
+			<option value="">日</option>  
+		</select> 
+  	</div>
+  	<button class="layui-btn layui-btn-normal search_btn" >搜索</button>
+</div>
+</form>
+	<div class="layui-form news_list">
+	  	<table class="layui-table">
+		    <colgroup>
+				<col width="7%">
+				<col width="11%">
+				<col width="11%">
+				<col width="11%">
+				<col width="11%">
+				<col width="11%">
+				<col >
+		    </colgroup>
+		    <thead>
+				<tr>
+				
+					<th>序号</th>
+					<th style="text-align:left;">年</th>
+					<th>月</th>
+					<th>日</th>
+					<th>类型</th>
+					<th>收益（元</th>
+				</tr> 
+		    </thead>
+		    <tbody class="news_content"></tbody>
+		</table>
+	</div>
+	<div id="page"></div>
+	<script type="text/javascript" src="../../layui/layui.js"></script>
+	
+	<script type="text/javascript" src="financeList.js"></script>
+	<script type="text/javascript" src="time.js"></script>
+</body>
+</html>

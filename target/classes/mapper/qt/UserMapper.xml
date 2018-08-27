@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="cn.lyz.hotle.login.dao.HandoverDao">
+	
+	<insert id="addHandover" parameterType="Handover">
+		insert into
+			h_handover
+			(name,phone,staff_id,dmoney,
+			bmoney,name2,phone2,staff_id2)
+		values
+			(#{name},#{phone},#{staff_id},#{dmoney},
+			#{bmoney},#{name2},#{phone2},#{staff_id2})
+	</insert>
+
+	
+	
+	
+</mapper>

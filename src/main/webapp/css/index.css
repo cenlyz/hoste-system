@@ -1,0 +1,241 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	   width:1100px;margin:0 auto;
+	   background-color:#F6F6F6;
+	   }
+   .sou{width:500px; }
+   .tr{text-align:center}
+   .nav-k{background-color:#9FFF9F} 
+   .hr{color:#F00; size:36px;}
+   .denglu a:hover{text-decoration:none}
+   .denglukuang { margin:0 auto}
+   .modal_denglu{text-align:center}
+   .modal_denglu tr{height:45px;}
+   .modal_denglu .modal_tr{height:75px;}
+   .modal_denglu .modal_tr p{font-size:19px;color:#069}
+   .modal_denglu .bt_denglu{
+       width:210px; 
+	   height:33px; 
+	   background:#37b5f9; 
+	   font-size:14px; 
+	   line-height:33px; 
+	   text-align:center; 
+	   border:0px; 
+	   color:#fff; 
+	   border-radius:5px; 
+	   cursor:pointer;
+	   margin:22px 0px 0px 25px;   
+   }
+   .modal_denglu .bt_denglu:hover{ background:#0065d0;}
+   .modal_header{background:#9FA6B9;}
+   .modal_header h3{color:#FFF}
+   .modal_checkbox{margin-left:40px;}
+   .modal_wang{float:right;}
+   .modal_input{
+	   width:236px; 
+	   height:40px; 
+	   border:1px solid #999; 
+	   line-height:25px; 
+	   padding-left:32px; 
+	   border-radius:5px;
+	   color:#000;  
+	   margin-bottom:10px;   
+   }
+   .name{background:url(../img/zc_06.jpg) no-repeat 15px 15px;}
+   .pw{background:url(../img/zc_16.jpg) no-repeat 15px 15px;}
+   
+   .zhuce_header{background-color:#1F77A3}
+   .zhuce_header h3{color:#FFF}
+   .bt_zhuce{
+	   width:100px; 
+	   height:33px; 
+	   background:#37b5f9; 
+	   font-size:14px; 
+	   line-height:33px; 
+	   text-align:center; 
+	   border:0px; 
+	   color:#fff; 
+	   border-radius:5px; 
+	   cursor:pointer;
+	   margin:22px 0px 0px 25px;   
+    }
+	.bt_zhuce:hover{background:#0065d0;}
+
+.nav_dao{
+	width:100%;
+	height:35px;
+	background-color:#75A96B;
+	margin:0 auto;
+}
+.nav_dao ul{
+	list-style:none;
+	float:left;
+	
+}
+.nav_dao ul li{
+	float:left; display:block;  width:7em; line-height:2.5em; text-align:center;
+}
+.nav_dao a{color:#FFF;}
+
+.table{background-color:#5681FE; width:1100px; text-align:center;}
+
+.table a{color:#FFF; font-weight:bold;}
+
+.table td{text-align:center;}
+
+
+
+.content_nei{
+	width:100%;
+	height:300px;
+	background-color:#FFF;
+}
+.content_nei_left{
+	width:40%;
+	height:300px;
+	float:left;
+}
+.content_nei_right img{width:660px;height:300px;}
+.content_nei_right{
+	width:60%;
+	height:300px;
+	float:right;
+	background-color:#CCC;
+}
+.nei_table{
+    height:200px;
+}
+.nei_table tr{height:36px;}
+
+.nei_table h3{color:#69C}
+.nei_table a{color:#000;}
+.carousel-caption p{size:20px}
+
+
+.zhongjian{
+	margin:10px auto;
+	width:100%;
+	height:60px;
+}
+
+.content_tow{
+	width:100%;
+	height:350px;
+	background-color:#FFF;
+	
+}
+.content_tow_left{
+	width:40%;
+	height:350px;
+	background-color:#FFF;
+	margin-top:18px;
+	float:left;
+}
+.content_tow_left table{width:400px;}
+.content_tow_left tr{height:38px; }
+.content_tow_left_p{}
+.content_tow_left_li li{line-height:2em;}
+.content_tow_left_li a{color:#000;}
+
+.content_tow_right{
+	width:60%;
+	height:350px;
+	margin-top:18px;
+	background-color:#FFF;
+	float:right;
+}
+.content_tow_right .table_1{width:100%;}
+.content_tow_right .table_2{width:95%;}
+.content_tow_right .table_2 td{border-bottom:1px dashed #CCCCCC;}
+.content_tow_right .table_2 span{float:right;margin-right:30px;}
+.table_1 tr{height:38px;background-image:url(../img/beijing1.jpg);}
+.table_1 p{color:#1A350B;font-size:20px;margin:0 auto;}
+.table_1_p1{padding:0px 0px 0px 20px;}
+.table_1_p2{padding:0px 55px 0px 0px;}
+.table_2 tr{height:36px;}
+.table_2 a{margin-left:8px;}
+
+
+.content_three{
+	width:100%;
+	height:624px;
+	background-color:#FFF;
+}
+.content_three_nav{
+	width:100%;
+	height:65px;
+	background:url(../img/xinwen1.jpg);
+	margin:10px auto;
+}
+.content_three_p1{margin:18px 0px 18px 78px;color:#FFF;font-size:24px;}
+.content_three_p1 a{color:#FFF;font-weight:bold;}
+.content_three_p1 a:hover{text-decoration:none;color:#CCC}
+
+.content_three_p2{margin:21px 78px 30px 0px;color:#FFF;font-size:14px;}
+.content_three_p2 a{color:#FFF;font-weight:bold;}
+.content_three_p2 span{color:#FFF;font-size:18px}
+
+.content_three_1{
+	width:100%;
+	height:250px;
+}
+.content_three_2{
+	width:100%;
+	height:250px;
+	margin-top:23px;
+}
+
+.content_three_left{
+	width:360px;
+	height:250px;
+	float:left;
+}
+.content_three_table1{width:100%;}
+.content_three_table1 tr{height:30px;background-image:url(../img/threebeijing1.jpg);}
+.content_three_table1 a{font-size:18px; margin-left:5px;color:#FFF;}
+.content_three_table2{width:100%;}
+.content_three_table2 tr{height:37px;}
+.content_three_table2 a{margin-left:5px;color:#000}
+.content_three_table3{width:100%;}
+.content_three_table3 a{float:right; margin-right:50px;font-size:16px;}
+
+.content_three_mid{
+	width:360px;
+	height:250px;
+	margin-left:370px;
+}
+.content_three_right{
+	width:360px;
+	height:250px;
+	float:right;
+}
+
+.news_foot{
+	width:100%;
+	height:80px;
+	background-color:#CCC;
+}
+.news_foot_p1{text-align:center;}
+.modal_in{
+	width:200px;
+	height:28px;
+}
+.item img{
+	height:300px;
+}
+._input{
+	width:450px;
+	height:36px;
+	background-color:#FAFAFA;
+	border:1px solid #CCCCCC;
+	padding-left:5px;
+}
+.bt_input{
+	padding:8px 13px;
+	background-color:#EEEEEE;
+	border-radius:3px;
+	border:1px solid #CCCCCC;
+	cursor:pointer;
+}

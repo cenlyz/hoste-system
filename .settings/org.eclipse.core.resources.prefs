@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//src/main/java/cn/lyz/hotle/login/controller/ControllerExceptionHandler.java=UTF-8
+encoding//src/main/java/cn/lyz/hotle/login/interceptors/Sessioninterceptors.java=UTF-8
+encoding//src/main/java/cn/lyz/hotle/login/service/AppException.java=UTF-8
+encoding//src/main/java/cn/lyz/hotle/web/JsonResult.java=UTF-8
+encoding//src/main/webapp/page/css/find.css=UTF-8
+encoding//src/main/webapp/page/find.css=UTF-8
+encoding//src/main/webapp/page/qt/qt_handover.html=UTF-8
+encoding//src/test/java/product/service/TestProjectSerivce.java=UTF-8

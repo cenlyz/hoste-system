@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>客房添加--酒店后台管理模板</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+</head>
+<body class="childrenBody">
+	<form class="layui-form">
+		<div class="layui-form-item">
+			<label class="layui-form-label">客房号</label>
+			<div class="layui-input-block">
+				<input type="text" name="room_id" class="layui-input newsName" lay-verify="required" placeholder="请输入客房号">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<div class="layui-inline">
+				<label class="layui-form-label">客房类型</label>
+				<div class="layui-input-block type">
+					<input type="radio" name="type"  value="标间" checked="checked" title="标间">
+					<input type="radio" name="type" value="单人间" title="单人间">
+					<input type="radio" name="type"  value="商务房" title="商务房">
+					<input type="radio" name="type"  value="豪华单间" title="豪华单间">
+					<input type="radio" name="type" value="豪华双间" title="豪华双间">
+					<input type="radio" name="type"  value="豪华套房" title="豪华套房">
+				</div>
+			</div>
+			<div class="layui-inline">		
+				<label class="layui-form-label"></label>
+				<div class="layui-input-inline">
+				</div>
+			</div>
+			<div class="layui-inline">		
+				<label class="layui-form-label">客房价格</label>
+				<div class="layui-input-inline">
+					<input type="text" name="room_price" class="layui-input room_price" lay-verify="required" placeholder="请输入客房价格">
+				</div>
+			</div>
+			<div class="layui-inline">		
+				<label class="layui-form-label">客房折扣</label>
+				<div class="layui-input-inline">
+					<input type="text" name="room_discount" class="layui-input room_discount" lay-verify="required" placeholder="请输入0~1之间">
+				</div>
+			</div>
+			<div class="layui-inline">
+				<label class="layui-form-label">客房状态</label>
+				<div class="layui-input-inline">
+					<select name="browseLook" name="room_state" class="newsLook room_state" lay-filter="browseLook">
+				        <option value="0">可入住</option>
+				        <option value="2">未清洁</option>
+				    </select>
+				</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">客房位置</label>
+			<div class="layui-input-block">
+				<input type="text" name="room_site" class="layui-input room_site" lay-verify="required" placeholder="建议输入楼层(例：3F)">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">客房电话</label>
+			<div class="layui-input-block">
+				<input type="text" name="room_phone" class="layui-input room_phone" lay-verify="required" placeholder="请输入客房电话">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">客房描述</label>
+			<div class="layui-input-block">
+				<textarea class="layui-textarea layui-hide room_describe" name="room_describe" lay-verify="content" id="news_content"></textarea>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<button class="layui-btn" lay-submit="" lay-filter="addRoom">立即提交</button>
+				<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+		    </div>
+		</div>
+	</form>
+	<script type="text/javascript" src="../../layui/layui.js"></script>
+	<script type="text/javascript" src="roomAdd.js"></script>
+</body>
+</html>
